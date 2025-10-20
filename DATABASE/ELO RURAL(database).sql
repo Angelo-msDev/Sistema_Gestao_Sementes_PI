@@ -22,14 +22,13 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Administrador` (
   `nome` VARCHAR(45) NOT NULL,
   `cpf` VARCHAR(45) NOT NULL,
   `email` VARCHAR(100) NOT NULL,
-  `senha` VARCHAR(15) NOT NULL,
+  `senha` VARCHAR(255) NOT NULL,
   `telefone` VARCHAR(11) NOT NULL,
   `armazem_responsavel` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idAdministrador`),
   UNIQUE INDEX `idAdministrador_UNIQUE` (`idAdministrador` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
   UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC) VISIBLE,
-  UNIQUE INDEX `senha_UNIQUE` (`senha` ASC) VISIBLE,
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
 ENGINE = InnoDB
 COMMENT = '		';
@@ -51,7 +50,7 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Armazem` (
   INDEX `fk_Armazem_Administrador_idx` (`administradorFK` ASC) VISIBLE,
   CONSTRAINT `fk_Armazem_Administrador`
     FOREIGN KEY (`administradorFK`)
-    REFERENCES `mydb`.`Administrador` (`idAdministrador`)
+    REFERENCES `EloRural`.`Administrador` (`idAdministrador`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -67,7 +66,7 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Produtor` (
   `email` VARCHAR(100) NULL,
   `localizacao` VARCHAR(100) NOT NULL,
   `estado` VARCHAR(2) NOT NULL,
-  `propirdade` VARCHAR(100) NOT NULL,
+  `propriedade` VARCHAR(100) NOT NULL,
   `registro_rural` VARCHAR(100) NOT NULL,
   `administradorFK` INT NULL,
   PRIMARY KEY (`idAgricultor`),
@@ -78,7 +77,7 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Produtor` (
   INDEX `fk_Agricultor_Administrador1_idx` (`administradorFK` ASC) VISIBLE,
   CONSTRAINT `fk_Agricultor_Administrador1`
     FOREIGN KEY (`administradorFK`)
-    REFERENCES `mydb`.`Administrador` (`idAdministrador`)
+    REFERENCES `EloRural`.`Administrador` (`idAdministrador`)
     ON DELETE SET NULL
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -105,12 +104,12 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Lote_Semente` (
   INDEX `fk_Lote_Semente_Agricultor1_idx` (`agricultorFK` ASC) VISIBLE,
   CONSTRAINT `fk_Lote_Semente_Armazem1`
     FOREIGN KEY (`armazemFK`)
-    REFERENCES `mydb`.`Armazem` (`idArmazem`)
+    REFERENCES `EloRural`.`Armazem` (`idArmazem`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Lote_Semente_Agricultor1`
     FOREIGN KEY (`agricultorFK`)
-    REFERENCES `mydb`.`Produtor` (`idAgricultor`)
+    REFERENCES `EloRural`.`Produtor` (`idAgricultor`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -153,12 +152,12 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Relatorio_Auditor` (
   INDEX `fk_Relatorio_Auditor_Administrador1_idx` (`administradorFK` ASC) VISIBLE,
   CONSTRAINT `fk_Relatorio_Auditor_Auditor1`
     FOREIGN KEY (`auditorFK`)
-    REFERENCES `mydb`.`Auditor` (`idAuditor`)
+    REFERENCES `EloRural`.`Auditor` (`idAuditor`)
     ON DELETE SET NULL
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Relatorio_Auditor_Administrador1`
     FOREIGN KEY (`administradorFK`)
-    REFERENCES `mydb`.`Administrador` (`idAdministrador`)
+    REFERENCES `EloRural`.`Administrador` (`idAdministrador`)
     ON DELETE SET NULL
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -169,16 +168,16 @@ ENGINE = InnoDB;
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `EloRural`.`Alerta` (
   `idAlerta` INT NOT NULL AUTO_INCREMENT,
-  `tipo_alerta` ENUM("temperatura", "umidade", "validade") NOT NULL,
-  `mesagem` VARCHAR(45) NOT NULL,
+  `tipo_alerta` ENUM('temperatura', 'umidade', 'validade') NOT NULL,
+  `mensagem` VARCHAR(100) NOT NULL,
   `data_emissao` DATETIME NOT NULL,
-  `status` ENUM("ativo", "resolvido") NOT NULL,
+  `status` ENUM('ativo', 'resolvido') NOT NULL,
   `loteFK` INT NOT NULL,
   PRIMARY KEY (`idAlerta`),
   INDEX `fk_Alerta_Lote_Semente1_idx` (`loteFK` ASC) VISIBLE,
   CONSTRAINT `fk_Alerta_Lote_Semente1`
     FOREIGN KEY (`loteFK`)
-    REFERENCES `mydb`.`Lote_Semente` (`idLote_Semente`)
+    REFERENCES `EloRural`.`Lote_Semente` (`idLote_Semente`)
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
@@ -188,9 +187,9 @@ ENGINE = InnoDB;
 -- Table `EloRural`.`Distribuicao`
 -- -----------------------------------------------------
 CREATE TABLE IF NOT EXISTS `EloRural`.`Distribuicao` (
-  `idDistribuicao` INT NOT NULL,
+  `idDistribuicao` INT NOT NULL AUTO_INCREMENT,
   `data_envio` DATE NOT NULL,
-  `data_recebimento` DATE NOT NULL,
+  `data_recebimento` DATE,
   `status_entrega` VARCHAR(45) NOT NULL,
   `loteFK` INT NOT NULL,
   `agricultorFK` INT NOT NULL,
@@ -199,12 +198,12 @@ CREATE TABLE IF NOT EXISTS `EloRural`.`Distribuicao` (
   INDEX `fk_Distribuicao_Produtor1_idx` (`agricultorFK` ASC) VISIBLE,
   CONSTRAINT `fk_Distribuicao_Lote_Semente1`
     FOREIGN KEY (`loteFK`)
-    REFERENCES `mydb`.`Lote_Semente` (`idLote_Semente`)
+    REFERENCES `EloRural`.`Lote_Semente` (`idLote_Semente`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE,
   CONSTRAINT `fk_Distribuicao_Produtor1`
     FOREIGN KEY (`agricultorFK`)
-    REFERENCES `mydb`.`Produtor` (`idAgricultor`)
+    REFERENCES `EloRural`.`Produtor` (`idAgricultor`)
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
 ENGINE = InnoDB;
