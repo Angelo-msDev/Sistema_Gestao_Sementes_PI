@@ -1,0 +1,198 @@
+-- 20 INSERTS REALISTAS E COERENTES PARA A TABELA `Administrador`
+
+INSERT INTO `EloRural`.`Administrador` 
+(`nome`, `cpf`, `email`, `senha`, `telefone`, `armazem_responsavel`) VALUES
+('João Paulo Ferreira', '11122233301', 'joao.paulo@elorural.com', 'senha123', '81987654321', 'Armazém Central Recife'),
+('Mariana Souza Lima', '22233344402', 'mariana.slima@elorural.com', 'mrs456', '71998765432', 'Armazém Regional Salvador'),
+('Pedro Henrique Costa', '33344455503', 'pedro.costa@elorural.com', 'phc789', '85981234567', 'Armazém Polo Fortaleza'),
+('Lúcia Mendes Neves', '44455566604', 'lucia.neves@elorural.com', 'lmn@001', '62992345678', 'Armazém Estratégico Goiânia'),
+('Antônio Carlos Neto', '55566677705', 'antonio.neto@elorural.com', 'antonioc05', '11987651234', 'Armazém Distribuição São Paulo'),
+('Roberta Dias Silveira', '66677788806', 'roberta.dias@elorural.com', 'roberta123', '31988776655', 'Armazém Logístico Belo Horizonte'),
+('Felipe Guedes Santos', '77788899907', 'felipe.gsantos@elorural.com', 'felipegs7', '41991234567', 'Armazém Porto Paranaguá'),
+('Carla Oliveira Moura', '88899900008', 'carla.moura@elorural.com', 'carlaom@8', '51980001000', 'Armazém Fronteira Porto Alegre'),
+('Ricardo Almeida Viana', '99900011109', 'ricardo.viana@elorural.com', 'rav12345', '61982347777', 'Armazém Sementes Brasília'),
+('Patrícia Ferreira Rocha', '00011122210', 'patricia.rocha@elorural.com', 'patricia10', '92993458888', 'Armazém Manaus Florestal'),
+('Gustavo Morais Azevedo', '12312312311', 'gustavo.ma@elorural.com', 'gma@gma', '67996783333', 'Armazém Matogrossense Campo Grande'),
+('Juliana Paes Correia', '32132132112', 'juliana.correia@elorural.com', 'jpc!123', '91985432109', 'Armazém Pará Grãos'),
+('Marcos Vinícius Dantas', '45645645613', 'marcos.vd@elorural.com', 'mvd12345', '84992109876', 'Armazém Sertão Nordestino Natal'),
+('Renata Costa Pinho', '65465465414', 'renata.pinho@elorural.com', 'rcp.001', '83995671234', 'Armazém Paraíba Distribuição'),
+('Sérgio Lima Barreto', '78978978915', 'sergio.barreto@elorural.com', 'slb@senha', '79981230000', 'Armazém Litoral Sergipe'),
+('Vanessa Souza Matos', '98798798716', 'vanessa.sm@elorural.com', 'vsm_123', '21987650000', 'Armazém Rio Centro'),
+('Leonardo Gomes Barros', '10110110117', 'leonardo.gb@elorural.com', 'lgb1234', '27999887766', 'Armazém Capixaba Vitória'),
+('Camila Ribeiro Alves', '20220220218', 'camila.alves@elorural.com', 'cralves', '48984321098', 'Armazém Sul Catarinense'),
+('Diego Martins Farias', '30330330319', 'diego.farias@elorural.com', 'dmfarias', '69991230000', 'Armazém Rondônia Logística'),
+('Eloá Cristina Borges', '40440440420', 'eloa.borges@elorural.com', 'ecb@123', '55986543210', 'Armazém Pampa Rio Grande do Sul');
+
+-- Inserir Auditor
+INSERT INTO `EloRural`.`Auditor` 
+(`nome`, `cpf`, `orgao_vinculado`, `telefone`, `email`) VALUES
+('Aline Fontes Oliveira', '54321098765', 'MAPA', '61981112222', 'aline.fo@mapa.gov.br'),
+('Bento Xavier da Silva', '01928374650', 'INCRA', '81992223333', 'bento.xs@incra.gov.br'),
+('Cláudia Regina Barros', '11223344557', 'MAPA', '71983334444', 'claudia.rb@mapa.gov.br'),
+('Daniela Queiroz Matos', '67890123456', 'Certificadora IBD', '85984445555', 'daniela.qm@ibd.com.br'),
+('Eduardo Gomes Rocha', '23456789012', 'Agência de Defesa Agropecuária (ADAGRI-CE)', '62995556666', 'eduardo.gr@adagri.ce.gov.br'),
+('Fernanda Alves Paiva', '78901234567', 'EMBRAPA', '11986667777', 'fernanda.ap@embrapa.br'),
+('Gabriel Costa Pereira', '34567890123', 'INCRA', '31987778888', 'gabriel.cp@incra.gov.br'),
+('Heloísa Lima Diniz', '89012345678', 'ANVISA', '41998889999', 'heloisa.ld@anvisa.gov.br'),
+('Igor Naves de Melo', '45678901234', 'Certificadora ECOCERT', '51989990000', 'igor.nm@ecocert.com'),
+('Júlia Martins Trindade', '90123456789', 'Agência de Defesa Agropecuária (IDARON-RO)', '82991110000', 'julia.mt@idaron.ro.gov.br'),
+('Kleber Souza Nogueira', '56789012345', 'MAPA', '67992221111', 'kleber.sn@mapa.gov.br'),
+('Larissa Vieira Pinto', '01234567890', 'INCRA', '91983332222', 'larissa.vp@incra.gov.br'),
+('Marcelo Pires Cordeiro', '12345098761', 'Agência de Defesa Agropecuária (ADAB-BA)', '79984443333', 'marcelo.pc@adab.ba.gov.br'),
+('Natália Borges Freire', '67890543210', 'Certificadora IBD', '84995554444', 'natalia.bf@ibd.com.br'),
+('Otávio Sales Rangel', '23456109872', 'ANVISA', '69996665555', 'otavio.sr@anvisa.gov.br'),
+('Priscila Mendes Zanella', '78901654321', 'EMBRAPA', '47997776666', 'priscila.mz@embrapa.br'),
+('Quíron Rocha Santos', '34567210983', 'Secretaria Estadual de Agricultura (SEAGRI-PR)', '43998887777', 'quiron.rs@seagri.pr.gov.br'),
+('Raíssa Diniz Almeida', '89012765432', 'MAPA', '63999998888', 'raissa.da@mapa.gov.br'),
+('Samuel Ferreira Teles', '45678321094', 'Certificadora ECOCERT', '92980009999', 'samuel.ft@ecocert.com'),
+('Viviane Nobre Ramos', '90123876543', 'Defesa Agropecuária (ADAPAR-PR)', '38981110000', 'viviane.nr@adapar.pr.gov.br');
+
+-- Inserir Armazem
+INSERT INTO `EloRural`.`Armazem` 
+(`nome`, `localizacao`, `estado`, `capacidade`, `administradorFK`) VALUES
+('Armazém Central Recife', 'Av. Norte Miguel Arraes, 1000', 'PE', '1200 ton', 1),
+('Armazém Regional Salvador', 'Rua do Limoeiro, 50', 'BA', '850 ton', 2),
+('Armazém Polo Fortaleza', 'Av. da Integração, 305', 'CE', '900 ton', 3),
+('Armazém Estratégico Goiânia', 'BR-153, Km 50', 'GO', '2500 ton', 4),
+('Armazém Distribuição SP', 'Rod. Anhanguera, Km 20', 'SP', '3000 ton', 5),
+('Armazém Logístico BH', 'Av. Cristiano Machado, 12', 'MG', '1500 ton', 6),
+('Armazém Porto Paranaguá', 'Zona Portuária, Galpão A', 'PR', '1800 ton', 7),
+('Armazém Fronteira Sul', 'BR-290, Km 450', 'RS', '2200 ton', 8),
+('Armazém Sementes Brasília', 'Setor de Indústrias, Lote C', 'DF', '1100 ton', 9),
+('Armazém Manaus Florestal', 'Distrito Industrial, Quadra 5', 'AM', '750 ton', 10),
+('Armazém Matogrossense', 'Av. dos Bandeirantes, 10', 'MT', '4000 ton', 11),
+('Armazém Pará Grãos', 'Rod. PA-256, Km 10', 'PA', '1350 ton', 12),
+('Armazém Sertão Natal', 'Rua das Oliveiras, 22', 'RN', '600 ton', 13),
+('Armazém Paraíba Distr.', 'BR-101, Trevo Principal', 'PB', '1050 ton', 14),
+('Armazém Litoral Sergipe', 'Rod. dos Coqueiros, 15', 'SE', '500 ton', 15),
+('Armazém Rio Centro', 'Av. Brasil, 5000', 'RJ', '1700 ton', 16),
+('Armazém Capixaba Vitória', 'BR-262, Km 30', 'ES', '950 ton', 17),
+('Armazém Sul Catarinense', 'Via Rápida, Galpão B', 'SC', '1600 ton', 18),
+('Armazém Rondônia Log.', 'BR-364, Saída 10', 'RO', '1400 ton', 19),
+('Armazém Pampa Grande', 'RS-101, Próximo ao Porto', 'RS', '2000 ton', 20);
+
+-- Inserir Produtor
+INSERT INTO `EloRural`.`Produtor` 
+(`nome`, `telefone`, `email`, `localizacao`, `estado`, `propriedade`, `registro_rural`, `administradorFK`) VALUES
+('Fazenda Sol Nascente', '81991231111', 'contato@solnascente.com', 'Sítio Brejo, Zona Rural', 'PE', 'Fazenda Sol Nascente', 'RR0001PE', 1),
+('Sítio Terra Viva', '71982342222', 'terraviva@produtor.com', 'Estrada Velha, Km 5', 'BA', 'Sítio Terra Viva', 'RR0002BA', 2),
+('Chácara Boa Vista', '85993453333', 'boavista@agro.net', 'Distrito de Iracema', 'CE', 'Chácara Boa Vista', 'RR0003CE', 3),
+('Agropecuária Bandeirantes', '62994564444', 'bandeirantes@agri.br', 'Rod. BR-060, Saída 1', 'GO', 'Fazenda Bandeirantes', 'RR0004GO', 4),
+('Família Silva Orgânicos', '11985675555', 'silva.organicos@mail.com', 'Bairro Rural de Cotia', 'SP', 'Sítio da Família', 'RR0005SP', 5),
+('Fazenda Primavera', '31986786666', 'primavera@farm.com', 'Vale do Jequitinhonha', 'MG', 'Fazenda Primavera', 'RR0006MG', 6),
+('Produtor Caio Gomes', '41997897777', 'caiogomes@email.com', 'Estrada do Cerne, Lote 10', 'PR', 'Lote Caio Gomes', 'RR0007PR', 7),
+('Coop. Serrana RS', '51988908888', 'cooperativa@serrana.com', 'Região da Serra Gaúcha', 'RS', 'Fazenda União', 'RR0008RS', 8),
+('Sítio Recanto Verde', '61999019999', 'recantoverde@email.br', 'Núcleo Rural Ponte Alta', 'DF', 'Recanto Verde', 'RR0009DF', 9),
+('Fazenda Amazonas Forte', '92981230000', 'amazonasforte@mail.com', 'Rio Preto da Eva', 'AM', 'Amazonas Forte', 'RR0010AM', 10),
+('Fazenda Pantanal', '67992341111', 'pantanalagro@net.br', 'Rod. Transpantaneira', 'MT', 'Fazenda Pantanal', 'RR0011MT', 11),
+('Produtora Maria Clara', '91983452222', 'mariaclara@produtor.net', 'Ilha de Marajó, Lote 5', 'PA', 'Sítio Maria Clara', 'RR0012PA', 12),
+('Fazenda Riacho Seco', '84994563333', 'riachoseco@agro.br', 'Zona Rural de Caicó', 'RN', 'Riacho Seco', 'RR0013RN', 13),
+('Irmãos Oliveira PB', '83995674444', 'irmaosoliveira@mail.com', 'Zona da Mata, Sítio 2A', 'PB', 'Sítio Novo Horizonte', 'RR0014PB', 14),
+('Sítio Coqueiral', '79986785555', 'coqueiral@rural.com', 'Povoado de Pirambu', 'SE', 'Sítio Coqueiral', 'RR0015SE', 15),
+('Produtora Ana Lucia', '21987896666', 'analucia@farm.com.br', 'Região Serrana RJ', 'RJ', 'Chácara da Montanha', 'RR0016RJ', 16),
+('Fazenda Esperança ES', '27998907777', 'esperanca@agricola.br', 'Interior de Colatina', 'ES', 'Fazenda Esperança', 'RR0017ES', 17),
+('Sítio Vento Bom', '48989018888', 'ventobom@net.com', 'Planalto Serrano', 'SC', 'Sítio Vento Bom', 'RR0018SC', 18),
+('Fazenda do Café', '69991029999', 'fazendocafe@mail.net', 'Linha 18, Lote C', 'RO', 'Fazenda do Café', 'RR0019RO', 19),
+('Produtor João Pedro', '55992130000', 'joaopedro@produtor.br', 'Fronteira Oeste', 'RS', 'Granja Fronteira', 'RR0020RS', 20),
+('Sítio Vale Feliz', '81993241111', 'valefeliz@agro.com', 'Zona Rural B, Sítio II', 'PE', 'Sítio Vale Feliz', 'RR0021PE', 1),
+('Agro Torres & Filhos', '71984352222', 'agrotorres@farm.net', 'Fazenda Nova, Distrito C', 'BA', 'Fazenda Torres', 'RR0022BA', 2),
+('Chácara dos Lagos', '85995463333', 'lagos@produtor.com', 'Serra de Baturité', 'CE', 'Chácara dos Lagos', 'RR0023CE', 3),
+('Fazenda Rio Verde', '62996574444', 'rioverde@agri.br', 'Zona Rural de Anápolis', 'GO', 'Fazenda Rio Verde', 'RR0024GO', 4),
+('Produtor Zeca', '11987685555', 'zeca@mail.com', 'Bairro Rural de Itapevi', 'SP', 'Sítio do Zeca', 'RR0025SP', 5);
+
+-- Inserir Lote_Semente
+INSERT INTO `EloRural`.`Lote_Semente` 
+(`cod_QR`, `semente`, `data_colheita`, `validade`, `origem`, `qualidade`, `status`, `armazemFK`, `agricultorFK`) VALUES
+(10001, 'Soja IPRO 10A', '2025-06-01', '2026-06-01', 'PE', 98.50, 'Em estoque', 1, 1),
+(10002, 'Milho Híbrido C30', '2025-07-15', '2026-07-15', 'BA', 95.20, 'Em estoque', 2, 2),
+(10003, 'Algodão BRS 123', '2025-08-20', '2026-08-20', 'CE', 90.10, 'Distribuído', 3, 3),
+(10004, 'Feijão Carioca Tipo 1', '2025-09-10', '2026-03-10', 'GO', 92.75, 'Comprometido', 4, 4),
+(10005, 'Soja IPRO 10A', '2025-10-05', '2026-10-05', 'SP', 99.00, 'Em estoque', 5, 5),
+(10006, 'Trigo BR 45', '2025-05-20', '2026-05-20', 'MG', 88.90, 'Finalizado', 6, 6),
+(10007, 'Milho Híbrido C30', '2025-08-01', '2026-08-01', 'PR', 96.50, 'Em estoque', 7, 7),
+(10008, 'Aveia Branca RS', '2025-07-25', '2026-07-25', 'RS', 94.30, 'Distribuído', 8, 8),
+(10009, 'Sorgo Granífero', '2025-06-15', '2026-06-15', 'DF', 97.80, 'Em estoque', 9, 9),
+(10010, 'Guaraná Nativo', '2025-09-01', '2026-09-01', 'AM', 85.00, 'Comprometido', 10, 10),
+(10011, 'Soja IPRO 10A', '2025-05-10', '2026-05-10', 'MT', 99.10, 'Finalizado', 11, 11),
+(10012, 'Arroz Irrigado', '2025-10-20', '2026-04-20', 'PA', 93.40, 'Em estoque', 12, 12),
+(10013, 'Feijão Vigna', '2025-08-05', '2026-02-05', 'RN', 89.50, 'Em estoque', 13, 13),
+(10014, 'Algodão BRS 123', '2025-09-25', '2026-09-25', 'PB', 91.00, 'Distribuído', 14, 14),
+(10015, 'Milho Pipoca', '2025-11-01', '2026-05-01', 'SE', 95.90, 'Em estoque', 15, 15),
+(10016, 'Soja IPRO 10A', '2025-07-01', '2026-07-01', 'RJ', 98.70, 'Comprometido', 16, 16),
+(10017, 'Café Arábica', '2025-06-20', '2026-12-20', 'ES', 96.00, 'Em estoque', 17, 17),
+(10018, 'Cevada SC', '2025-08-15', '2026-08-15', 'SC', 94.00, 'Finalizado', 18, 18),
+(10019, 'Feijão Caupi', '2025-09-05', '2026-03-05', 'RO', 91.50, 'Em estoque', 19, 19),
+(10020, 'Soja IPRO 10A', '2025-10-15', '2026-10-15', 'RS', 99.20, 'Em estoque', 20, 20),
+(10021, 'Milho Híbrido C30', '2025-06-25', '2026-06-25', 'PE', 95.80, 'Distribuído', 1, 21),
+(10022, 'Algodão BRS 123', '2025-07-05', '2026-07-05', 'BA', 90.50, 'Em estoque', 2, 22),
+(10023, 'Trigo BR 45', '2025-08-10', '2026-08-10', 'CE', 88.50, 'Comprometido', 3, 23),
+(10024, 'Feijão Carioca Tipo 1', '2025-09-20', '2026-03-20', 'GO', 93.00, 'Em estoque', 4, 24),
+(10025, 'Soja IPRO 10A', '2025-10-25', '2026-10-25', 'SP', 98.80, 'Finalizado', 5, 25),
+(10026, 'Sorgo Granífero', '2025-05-15', '2026-05-15', 'MG', 97.50, 'Em estoque', 6, 1),
+(10027, 'Aveia Branca RS', '2025-07-10', '2026-07-10', 'PR', 94.70, 'Comprometido', 7, 2),
+(10028, 'Arroz Irrigado', '2025-09-15', '2026-03-15', 'RS', 93.90, 'Em estoque', 8, 3),
+(10029, 'Café Arábica', '2025-06-05', '2026-12-05', 'DF', 96.20, 'Distribuído', 9, 4),
+(10030, 'Guaraná Nativo', '2025-08-25', '2026-08-25', 'AM', 86.00, 'Em estoque', 10, 5);
+
+-- Inserir Relatorio_Auditor
+INSERT INTO `EloRural`.`Relatorio_Auditor` 
+(`auditor`, `data_emissao`, `lote`, `parecer`, `conformidade`, `auditorFK`, `administradorFK`, `data_recebimento_admin`) VALUES
+('Aline Fontes Oliveira', '2025-10-01', 10001, 'Condições ideais de armazenamento.', 'Conforme', 1, 1, '2025-10-03'),
+('Bento Xavier da Silva', '2025-10-05', 10002, 'Pendente teste de germinação.', 'Em Análise', 2, 2, '2025-10-06'),
+('Cláudia Regina Barros', '2025-10-07', 10003, 'Rastreabilidade verificada com sucesso.', 'Conforme', 3, 3, '2025-10-09'),
+('Daniela Queiroz Matos', '2025-10-10', 10004, 'Documentação incompleta (origem).', 'Não Conforme', 4, 4, '2025-10-10'),
+('Eduardo Gomes Rocha', '2025-10-11', 10005, 'Qualidade e registro fitossanitário ok.', 'Conforme', 5, 5, '2025-10-13'),
+('Fernanda Alves Paiva', '2025-10-12', 10006, 'Vencimento próximo, auditoria prioritária.', 'Em Análise', 6, 6, '2025-10-14'),
+('Gabriel Costa Pereira', '2025-10-15', 10007, 'Pequena variação de temperatura registrada.', 'Em Análise', 7, 7, '2025-10-16'),
+('Heloísa Lima Diniz', '2025-10-17', 10008, 'Sem irregularidades. Conformidade total.', 'Conforme', 8, 8, '2025-10-19'),
+('Igor Naves de Melo', '2025-10-18', 10009, 'Falha no sensor de umidade do armazém.', 'Não Conforme', 9, 9, '2025-10-20'),
+('Júlia Martins Trindade', '2025-10-20', 10010, 'Amostras coletadas para análise de pureza.', 'Em Análise', 10, 10, NULL),
+('Kleber Souza Nogueira', '2025-10-21', 10011, 'Lote finalizado, relatório de encerramento.', 'Conforme', 11, 11, NULL),
+('Larissa Vieira Pinto', '2025-10-22', 10012, 'Estoque físico bate com o sistema.', 'Conforme', 12, 12, '2025-10-24'),
+('Marcelo Pires Cordeiro', '2025-10-23', 10013, 'Prazo de validade muito curto (6 meses).', 'Não Conforme', 13, 13, '2025-10-25'),
+('Natália Borges Freire', '2025-10-25', 10014, 'Certificação orgânica do lote confirmada.', 'Conforme', 14, 14, '2025-10-27'),
+('Otávio Sales Rangel', '2025-10-26', 10015, 'Análise microbiológica em curso.', 'Em Análise', 15, 15, '2025-10-28'),
+('Priscila Mendes Zanella', '2025-10-28', 10016, 'Documento de transporte vencido.', 'Não Conforme', 16, 16, '2025-10-30'),
+('Quíron Rocha Santos', '2025-10-29', 10017, 'Armazenamento de acordo com as normas.', 'Conforme', 17, 17, '2025-10-31'),
+('Raíssa Diniz Almeida', '2025-10-30', 10018, 'Lote vendido/distribuído. Auditoria final.', 'Conforme', 18, 18, NULL),
+('Samuel Ferreira Teles', '2025-11-01', 10019, 'Pendente aprovação do administrador.', 'Em Análise', 19, 19, '2025-11-03'),
+('Viviane Nobre Ramos', '2025-11-02', 10020, 'Relatório de inspeção de pragas. OK.', 'Conforme', 20, 20, '2025-11-04');
+
+-- Inserir Alerta
+-- DDL para a tabela Alerta (CORRIGIDO)
+INSERT INTO `EloRural`.`Alerta` 
+(`tipo_alerta`, `mensagem`, `data_emissao`, `status`, `loteFK`) VALUES
+('validade', 'Lote 10006 com 6 meses restantes de validade.', '2025-10-15 08:00:00', 'resolvido', 6),
+('temperatura', 'Pico de temperatura registrado no Armazém 2.', '2025-10-18 14:30:00', 'ativo', 2),
+('umidade', 'Nível de umidade crítico no lote 10009.', '2025-10-18 10:45:00', 'ativo', 9),
+('validade', 'Validade próxima (4 meses) para o lote 10013.', '2025-10-19 12:00:00', 'ativo', 13),
+('temperatura', 'Alerta resolvido: temperatura estabilizada (Lote 10002).', '2025-10-19 16:15:00', 'resolvido', 2),
+('umidade', 'Variação de umidade no Lote 10023. Verificar selagem.', '2025-10-20 09:20:00', 'ativo', 23),
+('temperatura', 'Sensor reporta alta temperatura (Lote 10016).', '2025-10-20 11:55:00', 'ativo', 16),
+('validade', 'Lote 10025 finalizado, alerta de validade ignorado.', '2025-10-21 07:30:00', 'resolvido', 25),
+('umidade', 'Umidade excessiva no Armazém de Manaus (Lote 10030).', '2025-10-22 13:40:00', 'ativo', 30),
+('temperatura', 'Temperatura normalizada após manutenção no sensor (Lote 10016).', '2025-10-22 17:00:00', 'resolvido', 16),
+('validade', 'Lote 10004 comprometido (curto prazo de validade).', '2025-10-23 09:00:00', 'ativo', 4),
+('umidade', 'Problema de umidade recorrente no lote 10009.', '2025-10-23 15:25:00', 'ativo', 9),
+('temperatura', 'Leitura errônea de sensor (Lote 10027).', '2025-10-24 10:10:00', 'resolvido', 27),
+('validade', 'Alerta para Lote 10011 (finalizado/validade expirada).', '2025-10-25 08:45:00', 'resolvido', 11),
+('umidade', 'Resolução do problema de umidade no lote 10023.', '2025-10-26 11:30:00', 'resolvido', 23);
+
+-- Inserir Distribuicao
+INSERT INTO `EloRural`.`Distribuicao` 
+(`idDistribuicao`, `data_envio`, `data_recebimento`, `status_entrega`, `loteFK`, `agricultorFK`) VALUES
+(1, '2025-09-01', '2025-09-05', 'Entregue', 3, 3), -- Lote 10003 (ID 3)
+(2, '2025-09-15', '2025-09-20', 'Entregue', 8, 8), -- Lote 10008 (ID 8)
+(3, '2025-10-01', NULL, 'Em trânsito', 4, 4), -- Lote 10004 (ID 4)
+(4, '2025-10-05', '2025-10-07', 'Entregue', 14, 14), -- Lote 10014 (ID 14)
+(5, '2025-10-10', NULL, 'Em separação', 10, 10), -- Lote 10010 (ID 10)
+(6, '2025-10-15', '2025-10-18', 'Entregue', 21, 21), -- Lote 10021 (ID 21)
+(7, '2025-10-16', NULL, 'Em trânsito', 27, 2), -- Lote 10027 (ID 27)
+(8, '2025-10-20', NULL, 'Em separação', 23, 23), -- Lote 10023 (ID 23)
+(9, '2025-10-25', '2025-10-28', 'Entregue', 29, 4), -- Lote 10029 (ID 29)
+(10, '2025-10-28', '2025-10-30', 'Entregue', 16, 16), -- Lote 10016 (ID 16)
+(11, '2025-11-01', NULL, 'Em trânsito', 1, 1), -- Lote 10001 (ID 1)
+(12, '2025-11-05', NULL, 'Cancelada', 5, 5), -- Lote 10005 (ID 5)
+(13, '2025-11-10', '2025-11-12', 'Entregue', 17, 17), -- Lote 10017 (ID 17)
+(14, '2025-11-15', NULL, 'Em trânsito', 7, 7), -- Lote 10007 (ID 7)
+(15, '2025-11-20', '2025-11-20', 'Entregue', 15, 15); -- Lote 10015 (ID 15)
