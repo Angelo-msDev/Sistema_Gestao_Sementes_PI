@@ -1,5 +1,4 @@
 drop schema elorural;
-
 -- MySQL Workbench Forward Engineering
 
 SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
@@ -79,16 +78,12 @@ CREATE TABLE IF NOT EXISTS `elorural`.`armazem` (
   UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE,
   INDEX `fk_armazem_produtor1_idx` (`produtorFK` ASC) VISIBLE,
   INDEX `fk_armazem_administrador1_idx` (`administradorFK` ASC) VISIBLE,
-  CONSTRAINT `fk_armazem_produtor1`
-    FOREIGN KEY (`produtorFK`)
-    REFERENCES `elorural`.`produtor` (`idAgricultor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
   CONSTRAINT `fk_armazem_administrador1`
     FOREIGN KEY (`administradorFK`)
-    REFERENCES `elorural`.`administrador` (`idAdministrador`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `elorural`.`administrador` (`idAdministrador`),
+  CONSTRAINT `fk_armazem_produtor1`
+    FOREIGN KEY (`produtorFK`)
+    REFERENCES `elorural`.`produtor` (`idAgricultor`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 21
 DEFAULT CHARACTER SET = utf8mb3;
@@ -178,11 +173,12 @@ CREATE TABLE IF NOT EXISTS `elorural`.`cliente` (
   `idCliente` INT NOT NULL AUTO_INCREMENT,
   `nome` VARCHAR(100) NOT NULL,
   `telefone` VARCHAR(11) NOT NULL,
-  `email` VARCHAR(100) NULL,
+  `email` VARCHAR(100) NULL DEFAULT NULL,
   `registro_rural` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idCliente`),
   UNIQUE INDEX `idCliente_UNIQUE` (`idCliente` ASC) VISIBLE)
-ENGINE = InnoDB;
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
@@ -196,7 +192,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`entrega` (
   `cidade` VARCHAR(100) NOT NULL,
   `bairro` VARCHAR(100) NOT NULL,
   `cep` VARCHAR(100) NOT NULL,
-  `complemento` VARCHAR(100) NULL,
+  `complemento` VARCHAR(100) NULL DEFAULT NULL,
   `clienteFK` INT NOT NULL,
   `lote_sementeFK` INT NOT NULL,
   PRIMARY KEY (`idEntrega`),
@@ -205,15 +201,12 @@ CREATE TABLE IF NOT EXISTS `elorural`.`entrega` (
   INDEX `fk_entrega_lote_semente1_idx` (`lote_sementeFK` ASC) VISIBLE,
   CONSTRAINT `fk_entrega_cliente1`
     FOREIGN KEY (`clienteFK`)
-    REFERENCES `elorural`.`cliente` (`idCliente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    REFERENCES `elorural`.`cliente` (`idCliente`),
   CONSTRAINT `fk_entrega_lote_semente1`
     FOREIGN KEY (`lote_sementeFK`)
-    REFERENCES `elorural`.`lote_semente` (`idLote_Semente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
-ENGINE = InnoDB;
+    REFERENCES `elorural`.`lote_semente` (`idLote_Semente`))
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb3;
 
 
 -- -----------------------------------------------------
@@ -229,9 +222,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`rastreamento` (
   INDEX `fk_rastreamento_entrega1_idx` (`entregaFK` ASC) VISIBLE,
   CONSTRAINT `fk_rastreamento_entrega1`
     FOREIGN KEY (`entregaFK`)
-    REFERENCES `elorural`.`entrega` (`idEntrega`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    REFERENCES `elorural`.`entrega` (`idEntrega`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 16
 DEFAULT CHARACTER SET = utf8mb3;
@@ -245,32 +236,26 @@ CREATE TABLE IF NOT EXISTS `elorural`.`relatorio_auditor` (
   `auditor` VARCHAR(45) NOT NULL,
   `data_emissao` DATE NOT NULL,
   `lote` INT NOT NULL,
-  `parecer` VARCHAR(45) NOT NULL,
+  `parecer` VARCHAR(100) NOT NULL,
   `conformidade` ENUM('Conforme', 'Não Conforme', 'Em Análise') NOT NULL,
   `auditor_idAuditor` INT NOT NULL,
   `administradorFK` INT NOT NULL,
   `data_recebimento_admin` DATE NULL DEFAULT NULL,
-  `lote_semente_idLote_Semente` INT NOT NULL,
+  `lote_sementeFK` INT NOT NULL,
   PRIMARY KEY (`idRelatorio_Auditor`),
   UNIQUE INDEX `idRelatorio_Auditor_UNIQUE` (`idRelatorio_Auditor` ASC) VISIBLE,
   INDEX `fk_relatorio_auditor_auditor1_idx` (`auditor_idAuditor` ASC) VISIBLE,
   INDEX `fk_relatorio_auditor_administrador1_idx` (`administradorFK` ASC) VISIBLE,
-  INDEX `fk_relatorio_auditor_lote_semente1_idx` (`lote_semente_idLote_Semente` ASC) VISIBLE,
-  CONSTRAINT `fk_relatorio_auditor_auditor1`
-    FOREIGN KEY (`auditor_idAuditor`)
-    REFERENCES `elorural`.`auditor` (`idAuditor`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+  INDEX `fk_relatorio_auditor_lote_semente1_idx` (`lote_sementeFK` ASC) VISIBLE,
   CONSTRAINT `fk_relatorio_auditor_administrador1`
     FOREIGN KEY (`administradorFK`)
-    REFERENCES `elorural`.`administrador` (`idAdministrador`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION,
+    REFERENCES `elorural`.`administrador` (`idAdministrador`),
+  CONSTRAINT `fk_relatorio_auditor_auditor1`
+    FOREIGN KEY (`auditor_idAuditor`)
+    REFERENCES `elorural`.`auditor` (`idAuditor`),
   CONSTRAINT `fk_relatorio_auditor_lote_semente1`
-    FOREIGN KEY (`lote_semente_idLote_Semente`)
-    REFERENCES `elorural`.`lote_semente` (`idLote_Semente`)
-    ON DELETE NO ACTION
-    ON UPDATE NO ACTION)
+    FOREIGN KEY (`lote_sementeFK`)
+    REFERENCES `elorural`.`lote_semente` (`idLote_Semente`))
 ENGINE = InnoDB
 AUTO_INCREMENT = 21
 DEFAULT CHARACTER SET = utf8mb3;
