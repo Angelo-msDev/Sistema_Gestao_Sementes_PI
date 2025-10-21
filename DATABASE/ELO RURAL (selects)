@@ -2,44 +2,9 @@ select*from administrador;
 select*from alerta;
 select*from armazem;
 select*from auditor;
-select*from distribuicao;
+select*from cliente;
+select*from entrega;
 select*from lote_semente;
 select*from produtor;
+select*from rastreamento;
 select*from relatorio_auditor;
-
-
-SELECT
-    A.tipo_alerta 'Tipo de Alerta',
-    LS.semente 'Produto',
-    LS.cod_QR 'Codigo do Lote',
-    AZ.nome 'Armazem Local',
-    ADM.nome 'Administrador Responsavel',
-    A.mensagem 'Detalhe do Alerta'
-FROM
-    Alerta A
-INNER JOIN
-    Lote_Semente LS ON A.loteFK = LS.idLote_Semente
-INNER JOIN
-    Armazem AZ ON LS.armazemFK = AZ.idArmazem
-INNER JOIN
-    Administrador ADM ON AZ.administradorFK = ADM.idAdministrador
-WHERE
-    A.status = 'ativo'
-ORDER BY LS.semente;
-
-
-SELECT
-    RA.data_emissao 'Data de Emissão',
-    LS.semente 'Semente Auditada',
-    RA.lote 'Codigo Lote',
-    RA.parecer 'Detalhes Auditoria',
-    AU.nome 'Auditor Responsavel',
-    AU.orgao_vinculado 'Orgao Fiscalizador'
-FROM
-    EloRural.Relatorio_Auditor RA
-INNER JOIN
-    EloRural.Lote_Semente LS ON RA.lote = LS.cod_QR -- Usamos cod_QR aqui se o campo 'lote' do Relatorio_Auditor armazena o cod_QR (1000x)
-INNER JOIN
-    EloRural.Auditor AU ON RA.auditorFK = AU.idAuditor
-WHERE
-    RA.conformidade = 'Não Conforme';
