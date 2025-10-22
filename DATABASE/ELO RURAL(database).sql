@@ -237,20 +237,20 @@ CREATE TABLE IF NOT EXISTS `elorural`.`relatorio_auditor` (
   `lote` INT NOT NULL,
   `parecer` VARCHAR(100) NOT NULL,
   `conformidade` ENUM('Conforme', 'Não Conforme', 'Em Análise') NOT NULL,
-  `auditor_idAuditor` INT NOT NULL,
+  `auditorFK` INT NOT NULL,
   `administradorFK` INT NOT NULL,
   `data_recebimento_admin` DATE NULL DEFAULT NULL,
   `lote_sementeFK` INT NOT NULL,
   PRIMARY KEY (`idRelatorio_Auditor`),
   UNIQUE INDEX `idRelatorio_Auditor_UNIQUE` (`idRelatorio_Auditor` ASC) VISIBLE,
-  INDEX `fk_relatorio_auditor_auditor1_idx` (`auditor_idAuditor` ASC) VISIBLE,
+  INDEX `fk_relatorio_auditor_auditor1_idx` (`auditorFK` ASC) VISIBLE,
   INDEX `fk_relatorio_auditor_administrador1_idx` (`administradorFK` ASC) VISIBLE,
   INDEX `fk_relatorio_auditor_lote_semente1_idx` (`lote_sementeFK` ASC) VISIBLE,
   CONSTRAINT `fk_relatorio_auditor_administrador1`
     FOREIGN KEY (`administradorFK`)
     REFERENCES `elorural`.`administrador` (`idAdministrador`),
   CONSTRAINT `fk_relatorio_auditor_auditor1`
-    FOREIGN KEY (`auditor_idAuditor`)
+    FOREIGN KEY (`auditorFK`)
     REFERENCES `elorural`.`auditor` (`idAuditor`),
   CONSTRAINT `fk_relatorio_auditor_lote_semente1`
     FOREIGN KEY (`lote_sementeFK`)
