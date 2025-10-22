@@ -304,7 +304,7 @@ INSERT INTO rastreamento (data_envio, data_recebimento, status_entrega, entregaF
 
 
 
-INSERT INTO relatorio_auditor (auditor, data_emissao, lote, parecer, conformidade, auditor_idAuditor, administradorFK, data_recebimento_admin, lote_sementeFK) VALUES
+INSERT INTO relatorio_auditor (auditor, data_emissao, lote, parecer, conformidade, auditorFK, administradorFK, data_recebimento_admin, lote_sementeFK) VALUES
 ('Ana Clara Lima', '2025-09-20', 1001, 'Lote em total conformidade. Documentação completa.', 'Conforme', 1, 1, '2025-09-21', 1),
 ('Bruno César Santos', '2025-09-21', 1002, 'Pequena divergência na umidade inicial. Monitorar.', 'Não Conforme', 2, 2, '2025-09-22', 2),
 ('Carla Denise Rocha', '2025-09-22', 1003, 'Aguardando resultados laboratoriais finais.', 'Em Análise', 3, 3, NULL, 3),
