@@ -32,10 +32,10 @@ CREATE TABLE IF NOT EXISTS `elorural`.`administrador` (
   PRIMARY KEY (`idAdministrador`),
   UNIQUE INDEX `idAdministrador_UNIQUE` (`idAdministrador` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE,
-  UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC) VISIBLE,
-  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE)
+  UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
+  UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 21
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3
 COMMENT = '		';
 
@@ -54,11 +54,10 @@ CREATE TABLE IF NOT EXISTS `elorural`.`produtor` (
   `registro_rural` VARCHAR(100) NOT NULL,
   PRIMARY KEY (`idAgricultor`),
   UNIQUE INDEX `idProdutor_UNIQUE` (`idAgricultor` ASC) VISIBLE,
-  UNIQUE INDEX `nome_UNIQUE` (`nome` ASC) VISIBLE,
   UNIQUE INDEX `registro_rural_UNIQUE` (`registro_rural` ASC) VISIBLE,
-  UNIQUE INDEX `localizacao_UNIQUE` (`cep` ASC) VISIBLE)
+  UNIQUE INDEX `telefone_UNIQUE` (`telefone` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 26
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -85,7 +84,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`armazem` (
     FOREIGN KEY (`produtorFK`)
     REFERENCES `elorural`.`produtor` (`idAgricultor`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 21
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -120,7 +119,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`lote_semente` (
     ON DELETE RESTRICT
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 31
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -142,7 +141,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`alerta` (
     ON DELETE CASCADE
     ON UPDATE CASCADE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 16
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -162,7 +161,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`auditor` (
   UNIQUE INDEX `cpf_UNIQUE` (`cpf` ASC) VISIBLE,
   UNIQUE INDEX `email_UNIQUE` (`email` ASC) VISIBLE)
 ENGINE = InnoDB
-AUTO_INCREMENT = 21
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -224,7 +223,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`rastreamento` (
     FOREIGN KEY (`entregaFK`)
     REFERENCES `elorural`.`entrega` (`idEntrega`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 16
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
@@ -257,7 +256,7 @@ CREATE TABLE IF NOT EXISTS `elorural`.`relatorio_auditor` (
     FOREIGN KEY (`lote_sementeFK`)
     REFERENCES `elorural`.`lote_semente` (`idLote_Semente`))
 ENGINE = InnoDB
-AUTO_INCREMENT = 21
+AUTO_INCREMENT = 1
 DEFAULT CHARACTER SET = utf8mb3;
 
 
